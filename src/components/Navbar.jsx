@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
+  const [showMobileMenu, setshowMobileMenu] = useState(false);
   return (
     <div className="absolute top-0 left-0 w-full z-10">
       <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent">
@@ -27,17 +28,23 @@ const Navbar = () => {
           src={assets.menu_icon}
           className="md:hidden w-7 cursor-pointer"
           alt=""
+          onClick={() => setshowMobileMenu(true)}
         />
       </div>
 
       {/* Mobile menu */}
-
       <div
-        className="md:hidden fixed w-full right-0 top-0 
-      bottom-0 overflow-hidden bg-white transition-all"
+        className={`md:hidden 
+        ${showMobileMenu ? "fixed w-full" : "h-0 w-40"} right-0 top-0 
+      bottom-0 overflow-hidden bg-white transition-all`}
       >
         <div className="flex justify-end p-6 cursor-pointer">
-          <img src={assets.cross_icon} className="w-6" alt="" />
+          <img
+            src={assets.cross_icon}
+            className="w-6"
+            alt=""
+            onClick={() => setshowMobileMenu(false)}
+          />
         </div>
         <ul
           className="flex flex-col items-center gap-2 mt-5
