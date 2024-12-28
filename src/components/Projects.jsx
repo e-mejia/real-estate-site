@@ -1,9 +1,25 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { assets, projectsData } from "../assets/assets";
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsToShow, setcardsToShow] = useState(1);
+
+  useEffect(() => {
+    const updateCardsToShow = () => {
+      if (window.innerWidth >= 1024) {
+        setcardsToShow(projectsData.length);
+      } else {
+        setcardsToShow(1);
+      }
+    };
+    updateCardsToShow();
+
+    window.addEventListener("resize", updateCardsToShow);
+    return () => {
+      window.removeEventListener("resize", updateCardsToShow);
+    };
+  }, []);
 
   const nextProject = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1) % projectsData.length;
