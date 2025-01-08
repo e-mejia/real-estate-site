@@ -14,14 +14,30 @@ const Footer = () => {
       >
         <div className="w-full md:w-1/3 mb-8 md:mb-0">
           <img src={assets.logo_dark} alt="" />
-          <p>
+          <p className="text-gray-400 mt-4">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
             enim nostrum fugit assumenda at corporis nisi temporibus doloribus,
             velit, dolorem incidunt culpa, exercitationem nam optio dolorum
             cumque modi! Aliquam, eius?
           </p>
         </div>
-        <div></div>
+        <div>
+          <h3 className="text-white text-lg font-bold mb-4">Company</h3>
+          <ul>
+            <a href="#Header" className="hover:text-white">
+              Home
+            </a>
+            <a href="#About" className="hover:text-white">
+              About us
+            </a>
+            <a href="#Contact" className="hover:text-white">
+              Contact us
+            </a>
+            <a href="#" className="hover:text-white">
+              Privacy policy
+            </a>
+          </ul>
+        </div>
         <div></div>
       </div>
       <div></div>
