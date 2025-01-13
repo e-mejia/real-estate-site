@@ -26,7 +26,7 @@ const About = () => {
         className="text-gray-500 max-w-80 text-center
       mb-8"
       >
-        Passionat About Properties, Dediated to your Vision
+        Passionate About Properties, Dedicated to your Vision
       </p>
       <div
         className="flex flex-col md:flex-row items-center
